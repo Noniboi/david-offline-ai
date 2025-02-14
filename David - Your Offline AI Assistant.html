@@ -1,0 +1,216 @@
+
+<!-- saved from url=(0048)file:///C:/Users/user/Downloads/index%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   David - Your Offline AI Assistant
+  </title>
+  <script src="./David - Your Offline AI Assistant_files/saved_resource"></script>
+  <link href="./David - Your Offline AI Assistant_files/all.min.css" rel="stylesheet">
+  <link href="./David - Your Offline AI Assistant_files/css2" rel="stylesheet">
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+     if ('webkitSpeechRecognition' in window) {
+       const recognition = new webkitSpeechRecognition();
+       recognition.continuous = true;
+       recognition.interimResults = false;
+       recognition.lang = 'en-US';
+
+       recognition.onstart = function() {
+         console.log('Voice recognition started. Try speaking into the microphone.');
+       };
+
+       recognition.onresult = function(event) {
+         const transcript = event.results[event.resultIndex][0].transcript.trim();
+         console.log('You said: ', transcript);
+
+         if (transcript.toLowerCase().includes('david')) {
+           alert('David is listening...');
+           handleVoiceCommand(transcript);
+         }
+       };
+
+       recognition.onerror = function(event) {
+         console.error('Error occurred in recognition: ', event.error);
+       };
+
+       recognition.onend = function() {
+         console.log('Voice recognition ended.');
+       };
+
+       recognition.start();
+     } else {
+       console.log('Speech recognition not supported in this browser.');
+     }
+   });
+
+   function handleVoiceCommand(command) {
+     if (command.toLowerCase().includes('set a reminder')) {
+       const reminderText = command.split('set a reminder')[1].trim();
+       if (reminderText) {
+         alert(`Reminder set: ${reminderText}`);
+         // Here you can add code to actually save the reminder
+       } else {
+         alert('Please specify the reminder details.');
+       }
+     }
+   }
+  </script>
+ <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.mx-auto{margin-left:auto;margin-right:auto}.my-8{margin-top:2rem;margin-bottom:2rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mr-4{margin-right:1rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-4{gap:1rem}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.rounded{border-radius:0.25rem}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.px-4{padding-left:1rem;padding-right:1rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+ <body class="bg-gray-100 font-roboto">
+  <header class="bg-blue-600 text-white p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold">
+     David - Your Offline AI Assistant
+    </h1>
+    <nav>
+     <ul class="flex space-x-4">
+      <li>
+       <a class="hover:underline" href="file:///C:/Users/user/Downloads/index%20(1).html#">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="file:///C:/Users/user/Downloads/index%20(1).html#">
+        Features
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="file:///C:/Users/user/Downloads/index%20(1).html#">
+        About
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="file:///C:/Users/user/Downloads/index%20(1).html#">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <main class="container mx-auto p-4">
+   <section class="text-center my-8">
+    <h2 class="text-3xl font-bold mb-4">
+     Welcome to David, Your Offline AI Assistant
+    </h2>
+    <p class="text-gray-700 mb-6">
+     Your personal assistant that works without an internet connection.
+    </p>
+    <img alt="Illustration of an AI assistant named David helping a user with various tasks" class="mx-auto mb-6" height="400" src="./David - Your Offline AI Assistant_files/RWCoaSJ6-w4UCiLEaCzn8KfDRas7i1ZzN1FjlvaOwX8.jpg" width="600">
+    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+     Get Started
+    </button>
+   </section>
+   <section class="my-8">
+    <h3 class="text-2xl font-bold mb-4">
+     Features
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+     <div class="bg-white p-4 rounded shadow">
+      <img alt="Icon representing voice commands" class="mx-auto mb-4" height="100" src="./David - Your Offline AI Assistant_files/jsUtQwtcAlqZrdbZ6PWTmRX-LbtYvMUUW1C3CKVHUqU.jpg" width="100">
+      <h4 class="text-xl font-bold mb-2">
+       Voice Commands
+      </h4>
+      <p class="text-gray-700">
+       Control David with simple voice commands.
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <img alt="Icon representing task management" class="mx-auto mb-4" height="100" src="./David - Your Offline AI Assistant_files/lLVGkbh373lpUlbAvzTQBxhtffYXUSEndFNNZur8o84.jpg" width="100">
+      <h4 class="text-xl font-bold mb-2">
+       Task Management
+      </h4>
+      <p class="text-gray-700">
+       Keep track of your tasks and to-dos efficiently.
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <img alt="Icon representing offline functionality" class="mx-auto mb-4" height="100" src="./David - Your Offline AI Assistant_files/HB4w1_1AQkW0-LYEK8FM_LKRE0LWu8s0r-pDyNreRuE.jpg" width="100">
+      <h4 class="text-xl font-bold mb-2">
+       Offline Functionality
+      </h4>
+      <p class="text-gray-700">
+       David works seamlessly without an internet connection.
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <img alt="Icon representing reminders" class="mx-auto mb-4" height="100" src="./David - Your Offline AI Assistant_files/W48KVRpqJizwuiBaSuxm25dCSBewnzpSyOiwtS9eBKo.jpg" width="100">
+      <h4 class="text-xl font-bold mb-2">
+       Reminders
+      </h4>
+      <p class="text-gray-700">
+       Set reminders for important tasks and events.
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <img alt="Icon representing notes" class="mx-auto mb-4" height="100" src="./David - Your Offline AI Assistant_files/9q4KPUePjdpyBh89U9_pQC6zjgowsCZoIwVAKE9LSOc.jpg" width="100">
+      <h4 class="text-xl font-bold mb-2">
+       Notes
+      </h4>
+      <p class="text-gray-700">
+       Take and organize notes easily.
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <img alt="Icon representing calendar integration" class="mx-auto mb-4" height="100" src="./David - Your Offline AI Assistant_files/5E8IWgeqYWLujl6vbMV2_dKXqQ7ZWMZ11Y47EeuzE1c.jpg" width="100">
+      <h4 class="text-xl font-bold mb-2">
+       Calendar Integration
+      </h4>
+      <p class="text-gray-700">
+       Integrate with your calendar for seamless scheduling.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="my-8">
+    <h3 class="text-2xl font-bold mb-4">
+     Latest News
+    </h3>
+    <div class="space-y-4">
+     <div class="bg-white p-4 rounded shadow flex items-center">
+      <img alt="Thumbnail of the latest news article" class="mr-4" height="100" src="./David - Your Offline AI Assistant_files/n9T21fBYXP8c8YTxyPDOCZNtEt43UIHXhL5hC59R7og.jpg" width="100">
+      <div>
+       <h4 class="text-xl font-bold mb-2">
+        New Update Released
+       </h4>
+       <p class="text-gray-700">
+        We have released a new update with exciting features.
+       </p>
+      </div>
+     </div>
+     <div class="bg-white p-4 rounded shadow flex items-center">
+      <img alt="Thumbnail of the latest news article" class="mr-4" height="100" src="./David - Your Offline AI Assistant_files/n9T21fBYXP8c8YTxyPDOCZNtEt43UIHXhL5hC59R7og.jpg" width="100">
+      <div>
+       <h4 class="text-xl font-bold mb-2">
+        User Stories
+       </h4>
+       <p class="text-gray-700">
+        Read how our users are benefiting from David.
+       </p>
+      </div>
+     </div>
+     <div class="bg-white p-4 rounded shadow flex items-center">
+      <img alt="Thumbnail of the latest news article" class="mr-4" height="100" src="./David - Your Offline AI Assistant_files/n9T21fBYXP8c8YTxyPDOCZNtEt43UIHXhL5hC59R7og.jpg" width="100">
+      <div>
+       <h4 class="text-xl font-bold mb-2">
+        Upcoming Features
+       </h4>
+       <p class="text-gray-700">
+        Get a sneak peek at the features we are working on.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-blue-600 text-white p-4 mt-8">
+   <div class="container mx-auto text-center">
+    <p>
+     © 2023 David - Your Offline AI Assistant. All rights reserved.
+    </p>
+   </div>
+  </footer>
+ 
+</body></html>
